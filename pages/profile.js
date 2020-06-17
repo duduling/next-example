@@ -1,11 +1,14 @@
-import Header from '../components/Header'
+import Layout from '../components/Layout'
+
+import { useRouter } from 'next/router'
 
 function Profile() {
+    const { query: { name } } = useRouter()
+
     return (
-        <div>
-            <Header />
-            <p>Hello, my name is DuHyeon Kim. I use next.js</p>
-        </div>
+        <Layout>
+            <p>{`Hello, my name is ${name}. I use next.js`}</p>
+        </Layout>
     )
 }
 
